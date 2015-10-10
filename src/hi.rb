@@ -2,6 +2,7 @@ require 'sinatra'
 require 'twilio-ruby'
 
 set :bind, '0.0.0.0'
+set :port, 80
 
 get '/hello-monkey' do
   Twilio::TwiML::Response.new do |r|

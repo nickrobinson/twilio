@@ -18,4 +18,5 @@ COPY . $APP_HOME
 # Start server
 ENV PORT 3000
 EXPOSE 3000
+EXPOSE 80
 CMD ["ruby", "src/hi.rb"]
