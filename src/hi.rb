@@ -1,8 +1,14 @@
 require 'sinatra'
 require 'twilio-ruby'
+require 'sinatra/activerecord'
+require './environments'
+
 
 set :bind, '0.0.0.0'
-set :port, 80
+set :port, 3000
+
+class Call < ActiveRecord::Base
+end
 
 get '/hello-monkey' do
   people = {
@@ -10,6 +16,7 @@ get '/hello-monkey' do
       '+12054109722' => 'Nick Robinson'
   }
   name = people[params['From']] || 'Monkey'
+  Call.create(:from => "+12054109722", :to => "+12059138469")
   Twilio::TwiML::Response.new do |r|
     r.Say "Hello #{name}"
   end.text
