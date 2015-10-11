@@ -1,15 +1,15 @@
-source "https://rubygems.org/"
+source 'https://rubygems.org/'
 
 gem 'activerecord'
 gem 'rack'
 gem 'rack-test'
 gem 'sinatra'
-gem "sinatra-activerecord"
+gem 'sinatra-activerecord'
 gem 'twilio-ruby'
 
 group :development do
   gem 'sqlite3'
-  gem "tux"
+  gem 'tux'
 end
 
 group :production do
