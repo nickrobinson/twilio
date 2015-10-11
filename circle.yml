@@ -2,12 +2,13 @@ machine:
   services:
     - docker
   ruby:
-      version: 1.9.3-p448
+      version: 2.1.1
 
 dependencies:
   override:
     - docker info
     - docker build -t rocketcity/spam .
+    - bundle install
 
 test:
   override:
