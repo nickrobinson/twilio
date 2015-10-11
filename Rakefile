@@ -1,4 +1,4 @@
 # Rakefile
 
-require './app'
+require 'src/app'
 require 'sinatra/activerecord/rake'
