@@ -16,7 +16,7 @@ get '/hello-monkey' do
       '+12054109722' => 'Nick Robinson'
   }
   name = people[params['From']] || 'Monkey'
-  Call.create(:from => "+12054109722", :to => "+12059138469")
+  Call.create(:from => params['From'], :to => params['To'])
   Twilio::TwiML::Response.new do |r|
     r.Say "Hello #{name}"
   end.text
