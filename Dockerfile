@@ -18,4 +18,4 @@ COPY . $APP_HOME
 # Start server
 ENV PORT 80
 EXPOSE 80
-CMD ["ruby", "src/app.rb"]
+CMD ["ruby", "app.rb"]
