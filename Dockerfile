@@ -16,7 +16,6 @@ RUN bundle install
 COPY . $APP_HOME
 
 # Start server
-ENV PORT 3000
-EXPOSE 3000
+ENV PORT 80
 EXPOSE 80
-CMD ["ruby", "src/hi.rb"]
+CMD ["ruby", "src/app.rb"]
