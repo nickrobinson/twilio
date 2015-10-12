@@ -15,6 +15,9 @@ RUN bundle install
 # Upload source
 COPY . $APP_HOME
 
+#Set Env Variables
+ENV RACK_ENV production
+
 # Start server
 ENV PORT 80
 EXPOSE 80
