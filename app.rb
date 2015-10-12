@@ -5,7 +5,7 @@ require './environments'
 
 
 set :bind, '0.0.0.0'
-set :port, 3000
+set :port, 80
 
 class Call < ActiveRecord::Base
 end
