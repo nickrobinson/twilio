@@ -16,14 +16,19 @@ get '/hello-monkey' do
       '+12054109722' => 'Nick Robinson'
   }
   name = people[params['From']] || 'Monkey'
-  Call.create(:from => params['From'], :to => params['To'])
+
+  unless params['From'] == nil
+    Call.create(:from => params['From'], :to => params['To'], :account_sid => params['AccountSid'],
+                :call_sid => params['CallSid'])
+  end
+
   Twilio::TwiML::Response.new do |r|
     r.Say "Hello #{name}"
   end.text
 end
 
-get '/hello-frankie' do
+get '/ping' do
   Twilio::TwiML::Response.new do |r|
-    r.Say 'Hello Frankie'
+    r.Say 'Ping Success'
   end.text
 end
